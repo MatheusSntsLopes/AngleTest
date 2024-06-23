@@ -1,6 +1,7 @@
+// src/app.ts
 import express, { json, urlencoded } from "express";
 import cors from "cors";
-import { routes } from "./routes";
+import { routes } from "./routes/AngleRoute";
 
 const app = express();
 app.use(json());
