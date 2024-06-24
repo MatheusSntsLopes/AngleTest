@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { calculateAngle } from './angleCalculator';
+import { calculateAngle } from "./angleCalculator";
 
 describe('calculateAngle', (): void => {
   it('should calculate the correct angle at 3:00', (): void => {
@@ -18,7 +18,7 @@ describe('calculateAngle', (): void => {
     expect(calculateAngle(12, 30)).toBe(165);
   });
 
-  it('should throw an error for invalid time', () => {
+  it('should throw an error for invalid time', (): void => {
     expect((): number => calculateAngle(-1, 0)).toThrow('Invalid time');
     expect((): number => calculateAngle(13, 0)).toThrow('Invalid time');
     expect((): number => calculateAngle(0, 60)).toThrow('Invalid time');
