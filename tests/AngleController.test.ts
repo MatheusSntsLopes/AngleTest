@@ -1,8 +1,7 @@
 import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 import request from 'supertest';
-import { app } from '@/app';
-import { sequelize } from '@/models/AngleModel';
-
+import { app } from '../src/app';
+import { sequelize } from '../src/models/AngleModel';
 describe('AngleController', (): void => {
   beforeAll(async (): Promise<void> => {
     await sequelize.sync({ force: true });

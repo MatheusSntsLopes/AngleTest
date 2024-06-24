@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { calculateAngle } from "./angleCalculator";
+import { calculateAngle } from '../src/angleCalculator';
 
 describe('calculateAngle', (): void => {
   it('should calculate the correct angle at 3:00', (): void => {

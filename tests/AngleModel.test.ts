@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeAll, afterAll } from 'vitest';
-import { sequelize, AngleModel } from './models/AngleModel';
+import { sequelize, AngleModel } from '../src/models/AngleModel';
 
 describe('AngleModel', (): void => {
   beforeAll(async (): Promise<void> => {

@@ -27,13 +27,13 @@ export class AngleController {
 
       const angle: number = calculateAngle(hourInt, minuteInt);
 
-      await AngleModel.create({
+      const newAngle = await AngleModel.create({
         hour: hourInt,
         minute: minuteInt,
         angle
       });
 
-      res.json({ angle });
+      res.json({ angle, newAngle });
     } catch (error) {
       res.status(500).json({ error });
     }

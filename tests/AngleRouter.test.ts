@@ -1,7 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import request from 'supertest';
-import { app } from '@/app';
-
+import { app } from '../src/app';
 describe('AngleRouter', () => {
   it('should return "I\'m working" on the root route', async (): Promise<void> => {
     const res = await request(app).get('/');
