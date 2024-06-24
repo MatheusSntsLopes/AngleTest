@@ -7,8 +7,8 @@ export class AngleController {
   public async getAngle(req: Request, res: Response): Promise<void> {
     const { hour, minute } = req.params;
 
-    const hourInt = parseInt(hour, 10);
-    const minuteInt = parseInt(minute, 10);
+    const hourInt: number = parseInt(hour, 10);
+    const minuteInt: number = parseInt(minute, 10);
 
     if (isNaN(hourInt) || isNaN(minuteInt) || hourInt < 0 || hourInt > 12 || minuteInt < 0 || minuteInt > 59) {
       res.status(400).json({ error: 'Invalid time' });
@@ -25,7 +25,7 @@ export class AngleController {
         return;
       }
 
-      const angle = calculateAngle(hourInt, minuteInt);
+      const angle: number = calculateAngle(hourInt, minuteInt);
 
       await AngleModel.create({
         hour: hourInt,
