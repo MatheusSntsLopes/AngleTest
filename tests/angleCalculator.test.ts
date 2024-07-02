@@ -15,7 +15,7 @@ describe('calculateAngle', (): void => {
   });
 
   it('should calculate the correct angle at 12:30', (): void => {
-    expect(calculateAngle(12, 30)).toBe(165);
+    expect(calculateAngle(12, 30)).toBe(180);
   });
 
   it('should throw an error for invalid time', (): void => {

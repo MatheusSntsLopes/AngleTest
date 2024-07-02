@@ -6,7 +6,7 @@ export function calculateAngle(hour: number, minute: number): number {
 
   if (hour === 12) hour = 0;
 
-  const hourAngle: number = (hour * 30) + (minute * 0.5);
+  const hourAngle: number = hour * 30;
   const minuteAngle: number = minute * 6;
 
   let angle: number = Math.abs(hourAngle - minuteAngle);

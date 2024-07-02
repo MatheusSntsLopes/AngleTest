@@ -8,7 +8,7 @@ interface IAngle extends Model {
   angle: number;
   date?: Date;
 }
-const sequelize = new Sequelize('postgres://mgqtkdje:RS8dAh5cIyPebXOEQdyOYQAhs9IqwMgm@silly.db.elephantsql.com/mgqtkdje');
+const sequelize = new Sequelize('postgres://kmwxfndl:3C3ETAEdH2d2Y3qk39NdGapXWhH2r-km@isabelle.db.elephantsql.com/kmwxfndl');
 
 const AngleModel: ModelCtor<IAngle> = sequelize.define<IAngle>('Angle', {
   hour: {
