@@ -1,5 +1,5 @@
 // src/models/AngleModel.ts
-import { Sequelize, DataTypes, type Model, type ModelCtor } from "sequelize";
+import { Sequelize, DataTypes, type Model } from "sequelize";
 
 interface IAngle extends Model {
   id?: number;
@@ -10,7 +10,7 @@ interface IAngle extends Model {
 }
 const sequelize = new Sequelize('postgres://kmwxfndl:3C3ETAEdH2d2Y3qk39NdGapXWhH2r-km@isabelle.db.elephantsql.com/kmwxfndl');
 
-const AngleModel: ModelCtor<IAngle> = sequelize.define<IAngle>('Angle', {
+const AngleModel = sequelize.define<IAngle>('Angle', {
   hour: {
     type: DataTypes.INTEGER,
     allowNull: false

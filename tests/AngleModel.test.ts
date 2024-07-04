@@ -1,14 +1,19 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach, type SpyInstance } from 'vitest';
 import { AngleModel } from '../src/models/AngleModel';
+import { Mock } from './mock';
 
 describe('AngleModel', (): void => {
+  let createSpy: SpyInstance;
+  let findOneSpy: SpyInstance;
+
   beforeEach((): void => {
     vi.clearAllMocks();
+    createSpy = vi.spyOn(AngleModel, 'create');
+    findOneSpy = vi.spyOn(AngleModel, 'findOne');
   });
 
   it('should create a new angle record', async (): Promise<void> => {
-    const mockAngleRecord = AngleModel.build({ hour: 3, minute: 0, angle: 90 });
-    const createSpy = vi.spyOn(AngleModel, 'create').mockResolvedValue(mockAngleRecord);
+    createSpy.mockResolvedValue(Mock);
 
     const angleRecord = await AngleModel.create({ hour: 3, minute: 0, angle: 90 });
     expect(angleRecord).toBeDefined();
@@ -17,12 +22,11 @@ describe('AngleModel', (): void => {
     expect(angleRecord.angle).toBe(90);
 
     expect(createSpy).toHaveBeenCalled();
-    expect(createSpy).toHaveReturnedWith(mockAngleRecord);
+    expect(createSpy).toHaveReturnedWith(Mock);
   });
 
   it('should find an existing angle record', async (): Promise<void> => {
-    const mockAngleRecord = AngleModel.build({ hour: 3, minute: 0, angle: 90 });
-    const findOneSpy = vi.spyOn(AngleModel, 'findOne').mockResolvedValue(mockAngleRecord);
+    findOneSpy.mockResolvedValue(Mock);
 
     const angleRecord = await AngleModel.findOne({ where: { hour: 3, minute: 0 } });
     expect(angleRecord).toBeDefined();
@@ -33,6 +37,6 @@ describe('AngleModel', (): void => {
     }
 
     expect(findOneSpy).toHaveBeenCalled();
-    expect(findOneSpy).toHaveReturnedWith(mockAngleRecord);
+    expect(findOneSpy).toHaveReturnedWith(Mock);
   });
 });
